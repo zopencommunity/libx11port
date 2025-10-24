@@ -50,16 +50,16 @@ zopen_get_version() {
 ### Custom Build Logic (if applicable)
 ###
 # For libraries, this hook exports variables for other ports to use.
-#zopen_append_to_env() {
-#  cat <<END
-#if [ ! -z "\$ZOPEN_IN_ZOPEN_BUILD" ]; then
-#  export ZOPEN_EXTRA_CFLAGS="\${ZOPEN_EXTRA_CFLAGS} -I\${PWD}/include"
-#  export ZOPEN_EXTRA_CXXFLAGS="\${ZOPEN_EXTRA_CXXFLAGS} -I\${PWD}/include"
-#  export ZOPEN_EXTRA_LDFLAGS="\${ZOPEN_EXTRA_LDFLAGS} -L\${PWD}/lib"
-#  export ZOPEN_EXTRA_LIBS="\${ZOPEN_EXTRA_LIBS} -llibx11"
-#fi
-#END
-#}
+zopen_append_to_env() {
+  cat <<END
+if [ ! -z "\$ZOPEN_IN_ZOPEN_BUILD" ]; then
+  export ZOPEN_EXTRA_CFLAGS="\${ZOPEN_EXTRA_CFLAGS} -I\${PWD}/include"
+  export ZOPEN_EXTRA_CXXFLAGS="\${ZOPEN_EXTRA_CXXFLAGS} -I\${PWD}/include"
+  export ZOPEN_EXTRA_LDFLAGS="\${ZOPEN_EXTRA_LDFLAGS} -L\${PWD}/lib"
+  export ZOPEN_EXTRA_LIBS="\${ZOPEN_EXTRA_LIBS} -lx11"
+fi
+END
+}
 
 ###
 ### Optional User-Supplied Hooks (uncomment to use)
