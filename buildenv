@@ -1,5 +1,5 @@
 # bump: libx11-version /LIBX11_VERSION="(.*)"/ https://www.x.org/archive/individual/lib/|re:/libX11-([\d.]+).tar.gz/|semver:*
-LIBX11_VERSION="1.8.12"
+LIBX11_VERSION="1.8.14"
 
 ###
 ### Build control file for the libx11 port
